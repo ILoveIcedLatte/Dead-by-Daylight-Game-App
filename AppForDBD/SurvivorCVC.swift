@@ -10,5 +10,7 @@ import UIKit
 class SurvivorCVC: UICollectionViewCell {
     
     @IBOutlet weak var imgView: UIImageView!
-
+    
+    @IBOutlet weak var lblName: UILabel!
+    
 }
