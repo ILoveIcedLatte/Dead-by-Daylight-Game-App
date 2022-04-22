@@ -87,7 +87,7 @@ class MainMenuVC: UIViewController {
             for i in response_detail {
                 
                 allKillerModel.append(
-                    KillerModel(name: i.name,
+                    KillerModel(id: i._id, name: i.name,
                                   full_name: i.full_name,
                                   gender: i.gender,
                                   nationality: i.nationality,
@@ -118,7 +118,8 @@ class MainMenuVC: UIViewController {
             for i in response_detail {
                 
                 allSurvivorModel.append(
-                    SurvivorModel(name: i.name,
+                    SurvivorModel(id: i._id,
+                                  name: i.name,
                                   full_name: i.full_name,
                                   gender: i.gender,
                                   role: i.role,
@@ -225,6 +226,28 @@ extension MainMenuVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         }
         
 
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if collectionView == collectionViewSurvivor {
+            
+            let detailPage = Storyboards.main.instantiateViewController(withIdentifier: "DetailPageVC") as! DetailPageVC
+            
+            detailPage.detailID = allSurvivorModel[indexPath.row].id
+            detailPage.detailType = .survivor
+            self.navigationController?.pushViewController(detailPage, animated: true)
+            
+        } else {
+            
+            let detailPage = Storyboards.main.instantiateViewController(withIdentifier: "DetailPageVC") as! DetailPageVC
+            
+            detailPage.detailID = allKillerModel[indexPath.row].id
+            detailPage.detailType = .killer
+            self.navigationController?.pushViewController(detailPage, animated: true)
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

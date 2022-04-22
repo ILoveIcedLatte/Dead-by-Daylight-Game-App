@@ -16,6 +16,7 @@ struct Icon: Codable {
 
 
 struct Survivor: Codable {
+    var _id : String
     var name: String
     var full_name: String
     var gender: String
@@ -36,6 +37,7 @@ struct IconKiller: Codable {
 
 
 struct Killer: Codable {
+    var _id: String
     var name: String
     var full_name: String
     var gender: String

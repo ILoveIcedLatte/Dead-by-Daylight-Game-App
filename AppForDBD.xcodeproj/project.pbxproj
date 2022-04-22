@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A008C0CD280F3F8C001EC7B7 /* DetailPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A008C0CC280F3F8C001EC7B7 /* DetailPageVC.swift */; };
 		A020EDC028089B9F004BB860 /* Papernotes Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A020EDBE28089B3C004BB860 /* Papernotes Bold.ttf */; };
 		A020EDC128089BA4004BB860 /* Papernotes Sketch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A020EDBD28089B3C004BB860 /* Papernotes Sketch.ttf */; };
 		A020EDC228089BA7004BB860 /* Papernotes.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A020EDBF28089B3C004BB860 /* Papernotes.ttf */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A008C0CC280F3F8C001EC7B7 /* DetailPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageVC.swift; sourceTree = "<group>"; };
 		A020EDBD28089B3C004BB860 /* Papernotes Sketch.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Papernotes Sketch.ttf"; path = "../../../../../Downloads/papernotes/Papernotes Sketch.ttf"; sourceTree = "<group>"; };
 		A020EDBE28089B3C004BB860 /* Papernotes Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Papernotes Bold.ttf"; path = "../../../../../Downloads/papernotes/Papernotes Bold.ttf"; sourceTree = "<group>"; };
 		A020EDBF28089B3C004BB860 /* Papernotes.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Papernotes.ttf; path = ../../../../../Downloads/papernotes/Papernotes.ttf; sourceTree = "<group>"; };
@@ -87,16 +89,17 @@
 			children = (
 				A0598EAE2804B21E00F839C5 /* AppDelegate.swift */,
 				A0598EB02804B21E00F839C5 /* SceneDelegate.swift */,
+				A0DB7AE32809F86F00BEE13D /* SurvivorCVC.swift */,
 				A0598EB22804B21E00F839C5 /* MainMenuVC.swift */,
 				A06556BB28089FFE007E7EA0 /* Network.swift */,
 				A06556BD2808A015007E7EA0 /* Services.swift */,
 				A06556C12808A193007E7EA0 /* Storyboards.swift */,
 				A06556BF2808A02C007E7EA0 /* ViewModel.swift */,
 				A0598EB42804B21E00F839C5 /* Main.storyboard */,
+				A008C0CC280F3F8C001EC7B7 /* DetailPageVC.swift */,
 				A0598EB72804B22000F839C5 /* Assets.xcassets */,
 				A0598EB92804B22000F839C5 /* LaunchScreen.storyboard */,
 				A0598EBC2804B22000F839C5 /* Info.plist */,
-				A0DB7AE32809F86F00BEE13D /* SurvivorCVC.swift */,
 			);
 			path = AppForDBD;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			files = (
 				A0DB7AE42809F86F00BEE13D /* SurvivorCVC.swift in Sources */,
 				A06556BE2808A015007E7EA0 /* Services.swift in Sources */,
+				A008C0CD280F3F8C001EC7B7 /* DetailPageVC.swift in Sources */,
 				A0598EB32804B21E00F839C5 /* MainMenuVC.swift in Sources */,
 				A0598EAF2804B21E00F839C5 /* AppDelegate.swift in Sources */,
 				A06556BC28089FFE007E7EA0 /* Network.swift in Sources */,

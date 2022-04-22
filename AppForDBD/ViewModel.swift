@@ -16,6 +16,7 @@ struct IconModel {
 
 
 struct SurvivorModel {
+    var id: String
     var name: String
     var full_name: String
     var gender: String
@@ -37,6 +38,7 @@ struct IconKillerModel {
 
 
 struct KillerModel {
+    var id: String
     var name: String
     var full_name: String
     var gender: String
@@ -45,6 +47,25 @@ struct KillerModel {
     var difficulty: String
     var icon: IconKillerModel
     var perks: [String]
+}
+
+struct DetailModel {
+    
+    var id: String
+    var name: String
+    var full_name: String
+    var gender: String
+    var nationality: String
+    var overview: String
+    var difficulty: String
+    var icon: IconDetailModel
+    var perks: [String]
+}
+
+struct IconDetailModel {
+    var portrait: String
+    var preview_portrait: String
+    var shop_background: String
 }
 
 
