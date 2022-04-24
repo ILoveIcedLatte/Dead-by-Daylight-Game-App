@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "kisspng-computer-icons-progress-bar-loading-5abe957cd3c076.6809630015224395488673.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -48,6 +48,17 @@ struct Killer: Codable {
     var perks: [String]
 }
 
+
+struct Perks: Codable {
+    var _id: String
+    var role: String
+    var name: String
+    var perk_name: String
+    var description: String
+    var icon: String
+    
+}
+
 public class Network {
     
     static func sendRequest(_ url: String, completionHandler: @escaping ([Survivor]) -> ()) {
@@ -84,6 +95,30 @@ public class Network {
                 do {
 
                     let response_detail = try JSONDecoder().decode([Killer].self, from: response.data!)
+                    
+                    completionHandler(response_detail)
+                    
+                }
+                catch {print(error)}
+
+            case .failure(let error):
+                print (error)
+            }
+        }
+        
+    }
+    
+    
+    static func sendRequestPerks(_ url: String, completionHandler: @escaping ([Perks]) -> ()) {
+        
+        AF.request(url, method: .get).responseJSON { (response) in
+
+            switch response.result {
+            case .success(let data):
+
+                do {
+
+                    let response_detail = try JSONDecoder().decode([Perks].self, from: response.data!)
                     
                     completionHandler(response_detail)
                     

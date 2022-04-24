@@ -69,6 +69,18 @@ struct IconDetailModel {
 }
 
 
+struct PerksModel: Codable {
+    var _id: String
+    var role: String
+    var name: String
+    var perk_name: String
+    var description: String
+    var icon: String
+    
+}
+
+var perksModel : PerksModel!
+var allPerksDetail = [PerksModel]()
 
 var iconModelKiller : IconKillerModel!
 //var allIconModel = [IconModel]()

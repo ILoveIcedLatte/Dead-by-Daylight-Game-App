@@ -237,6 +237,7 @@ extension MainMenuVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
             
             detailPage.detailID = allSurvivorModel[indexPath.row].id
             detailPage.detailType = .survivor
+            detailPage.detailName = allSurvivorModel[indexPath.row].name
             self.navigationController?.pushViewController(detailPage, animated: true)
             
         } else {
@@ -245,6 +246,7 @@ extension MainMenuVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
             
             detailPage.detailID = allKillerModel[indexPath.row].id
             detailPage.detailType = .killer
+            detailPage.detailName = allKillerModel[indexPath.row].name
             self.navigationController?.pushViewController(detailPage, animated: true)
         }
         
@@ -265,4 +267,8 @@ extension MainMenuVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     
     
 }
+
+
+
+
 
