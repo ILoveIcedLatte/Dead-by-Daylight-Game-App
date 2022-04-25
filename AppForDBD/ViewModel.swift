@@ -69,7 +69,7 @@ struct IconDetailModel {
 }
 
 
-struct PerksModel: Codable {
+struct PerksModel {
     var _id: String
     var role: String
     var name: String

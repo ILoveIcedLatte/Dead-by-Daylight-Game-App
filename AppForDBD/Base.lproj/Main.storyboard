@@ -3,20 +3,11 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="MARKPRO.OTF">
-            <string>MarkPro</string>
-        </array>
-        <array key="MARKPROMEDIUM.OTF">
-            <string>MarkPro-Medium</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Main MenuVC-->
         <scene sceneID="tne-QT-ifu">
@@ -449,50 +440,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUA-XT-UCz">
-                                <rect key="frame" x="30" y="762" width="354" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="5Pb-fu-WBh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="MarkPro-Medium" family="Mark Pro" pointSize="16"/>
-                                <state key="normal" title="Cool">
-                                    <color key="titleColor" name="grape"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="18"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="btnDismissAct:" destination="Xz6-Gv-VcE" eventType="touchUpInside" id="PAl-1B-cdY"/>
-                                </connections>
-                            </button>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kpm-sP-ioU">
-                                <rect key="frame" x="30" y="541.5" width="354" height="205.5"/>
+                                <rect key="frame" x="30" y="394" width="354" height="462"/>
                                 <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="koL-L6-kXn">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="462.5"/>
+                                    </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4gk-MZ-z3V">
-                                        <rect key="frame" x="137" y="30" width="80" height="80"/>
+                                        <rect key="frame" x="127" y="30" width="100" height="100"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="80" id="GQK-Js-rWS"/>
-                                            <constraint firstAttribute="width" constant="80" id="kEu-IK-xIQ"/>
+                                            <constraint firstAttribute="height" constant="100" id="GQK-Js-rWS"/>
+                                            <constraint firstAttribute="width" constant="100" id="kEu-IK-xIQ"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Perk Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hT-2R-NP5">
-                                        <rect key="frame" x="32" y="118" width="290" height="24.5"/>
-                                        <fontDescription key="fontDescription" name="MarkPro-Medium" family="Mark Pro" pointSize="21"/>
-                                        <color key="textColor" name="grape"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="PERK NAME" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hT-2R-NP5">
+                                        <rect key="frame" x="32" y="150" width="290" height="31.5"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="24"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Perk Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkH-7x-qZl">
-                                        <rect key="frame" x="32" y="158.5" width="290" height="20"/>
-                                        <fontDescription key="fontDescription" name="MarkPro" family="Mark Pro" pointSize="17"/>
-                                        <color key="textColor" name="bluishGrey"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Perk Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="hkH-7x-qZl">
+                                        <rect key="frame" x="32" y="201.5" width="290" height="233.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" id="gWk-WX-UAV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dTU-Yo-uh5">
-                                        <rect key="frame" x="0.0" y="194.5" width="354" height="1"/>
-                                        <color key="backgroundColor" red="0.87450980389999999" green="0.90588235289999997" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="0.0" y="451" width="354" height="1"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="jkW-wf-qH9"/>
                                         </constraints>
@@ -501,17 +479,22 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="4gk-MZ-z3V" firstAttribute="centerX" secondItem="kpm-sP-ioU" secondAttribute="centerX" id="0Q0-XS-9cT"/>
+                                    <constraint firstItem="dTU-Yo-uh5" firstAttribute="top" secondItem="koL-L6-kXn" secondAttribute="bottom" constant="-11.5" id="0h5-cY-6FR"/>
                                     <constraint firstItem="dTU-Yo-uh5" firstAttribute="top" secondItem="hkH-7x-qZl" secondAttribute="bottom" constant="16" id="7VU-MN-aq2"/>
                                     <constraint firstItem="dTU-Yo-uh5" firstAttribute="leading" secondItem="kpm-sP-ioU" secondAttribute="leading" id="8IK-Ig-cD7"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="BYB-Om-BSR"/>
                                     <constraint firstAttribute="trailing" secondItem="dTU-Yo-uh5" secondAttribute="trailing" id="F0V-at-pq2"/>
-                                    <constraint firstItem="hkH-7x-qZl" firstAttribute="top" secondItem="4hT-2R-NP5" secondAttribute="bottom" constant="16" id="Poi-6o-z3t"/>
+                                    <constraint firstItem="hkH-7x-qZl" firstAttribute="top" secondItem="4hT-2R-NP5" secondAttribute="bottom" constant="20" id="Poi-6o-z3t"/>
+                                    <constraint firstItem="koL-L6-kXn" firstAttribute="leading" secondItem="kpm-sP-ioU" secondAttribute="leading" id="Sc9-E1-XR8"/>
                                     <constraint firstItem="hkH-7x-qZl" firstAttribute="leading" secondItem="kpm-sP-ioU" secondAttribute="leading" constant="32" id="aT7-zV-G03"/>
                                     <constraint firstAttribute="bottom" secondItem="dTU-Yo-uh5" secondAttribute="bottom" constant="10" id="bxj-oB-10z"/>
-                                    <constraint firstItem="4hT-2R-NP5" firstAttribute="top" secondItem="4gk-MZ-z3V" secondAttribute="bottom" constant="8" id="f7n-3O-LPG"/>
+                                    <constraint firstItem="4hT-2R-NP5" firstAttribute="top" secondItem="4gk-MZ-z3V" secondAttribute="bottom" constant="20" id="f7n-3O-LPG"/>
+                                    <constraint firstItem="koL-L6-kXn" firstAttribute="top" secondItem="kpm-sP-ioU" secondAttribute="top" id="fMA-XW-nai"/>
                                     <constraint firstItem="4hT-2R-NP5" firstAttribute="leading" secondItem="kpm-sP-ioU" secondAttribute="leading" constant="32" id="g2K-Lj-s4w"/>
                                     <constraint firstAttribute="trailing" secondItem="4hT-2R-NP5" secondAttribute="trailing" constant="32" id="kKY-eP-tZz"/>
                                     <constraint firstAttribute="trailing" secondItem="hkH-7x-qZl" secondAttribute="trailing" constant="32" id="tEk-dL-p0U"/>
                                     <constraint firstItem="4gk-MZ-z3V" firstAttribute="top" secondItem="kpm-sP-ioU" secondAttribute="top" constant="30" id="tpT-RP-btX"/>
+                                    <constraint firstAttribute="trailing" secondItem="koL-L6-kXn" secondAttribute="trailing" id="z2C-t6-eyA"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -520,45 +503,47 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WA8-uC-x1Q">
-                                <rect key="frame" x="0.0" y="44" width="414" height="477.5"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="330"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="330" id="JUF-aq-B5D"/>
+                                </constraints>
                                 <connections>
                                     <action selector="btnDismissAct:" destination="Xz6-Gv-VcE" eventType="touchUpInside" id="4Pi-uL-jdg"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1fw-eN-nQT"/>
-                        <color key="backgroundColor" red="0.20000000300000001" green="0.1140000001" blue="0.3650000095" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="placeholderTextColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="VUA-XT-UCz" firstAttribute="top" secondItem="kpm-sP-ioU" secondAttribute="bottom" constant="15" id="9Gl-cF-ZYG"/>
                             <constraint firstItem="kpm-sP-ioU" firstAttribute="leading" secondItem="1fw-eN-nQT" secondAttribute="leading" constant="30" id="BSK-rh-3NG"/>
                             <constraint firstItem="WA8-uC-x1Q" firstAttribute="leading" secondItem="1fw-eN-nQT" secondAttribute="leading" id="DWj-Ly-DfC"/>
                             <constraint firstItem="kpm-sP-ioU" firstAttribute="top" secondItem="WA8-uC-x1Q" secondAttribute="bottom" constant="20" id="I0P-lW-lU8"/>
-                            <constraint firstItem="1fw-eN-nQT" firstAttribute="trailing" secondItem="VUA-XT-UCz" secondAttribute="trailing" constant="30" id="eM6-0M-fgL"/>
+                            <constraint firstAttribute="bottom" secondItem="kpm-sP-ioU" secondAttribute="bottom" constant="40" id="VWe-TL-ry4"/>
                             <constraint firstItem="WA8-uC-x1Q" firstAttribute="top" secondItem="1fw-eN-nQT" secondAttribute="top" id="eZ1-JA-Yz5"/>
-                            <constraint firstItem="1fw-eN-nQT" firstAttribute="bottom" secondItem="VUA-XT-UCz" secondAttribute="bottom" constant="40" id="nYj-KN-Ev9"/>
                             <constraint firstItem="1fw-eN-nQT" firstAttribute="trailing" secondItem="kpm-sP-ioU" secondAttribute="trailing" constant="30" id="rea-Yk-27Z"/>
-                            <constraint firstItem="VUA-XT-UCz" firstAttribute="leading" secondItem="1fw-eN-nQT" secondAttribute="leading" constant="30" id="w8s-3q-W6l"/>
                             <constraint firstItem="1fw-eN-nQT" firstAttribute="trailing" secondItem="WA8-uC-x1Q" secondAttribute="trailing" id="z63-uy-xUE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imgViewPerk" destination="4gk-MZ-z3V" id="JTm-Wm-Cvr"/>
+                        <outlet property="lblPerkDesc" destination="hkH-7x-qZl" id="uzX-FS-1mk"/>
+                        <outlet property="lblPerkName" destination="4hT-2R-NP5" id="6yv-NI-3aV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZWN-wS-zf3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2341" y="59"/>
+            <point key="canvasLocation" x="2339.130434782609" y="58.928571428571423"/>
         </scene>
     </scenes>
     <resources>
         <image name="backIcon" width="512" height="512"/>
         <image name="bg" width="2044" height="1299"/>
-        <namedColor name="bluishGrey">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="grape">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="placeholderTextColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>

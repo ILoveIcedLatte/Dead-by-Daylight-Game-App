@@ -113,9 +113,7 @@ class DetailPageVC: UIViewController {
     }
     
     func showActionSheetPerks() {
-        let actionSheet = Storyboards.main.instantiateViewController(withIdentifier: "ActionSheetShowPerk") as! ActionSheetShowPerk
-        actionSheet.modalPresentationStyle = .overFullScreen
-        self.present(actionSheet, animated: true, completion: nil)
+
     }
     
     func getCharacterDetail() {
@@ -233,7 +231,15 @@ extension DetailPageVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        showActionSheetPerks()
+        
+        let actionSheet = Storyboards.main.instantiateViewController(withIdentifier: "ActionSheetShowPerk") as! ActionSheetShowPerk
+        
+        actionSheet.perkNameStr = characterPerks[indexPath.row].perk_name
+        actionSheet.perkDescStr = characterPerks[indexPath.row].description
+        actionSheet.perkImageUrl = characterPerks[indexPath.row].icon
+        
+        actionSheet.modalPresentationStyle = .overFullScreen
+        self.present(actionSheet, animated: true, completion: nil)
         
         
     }
