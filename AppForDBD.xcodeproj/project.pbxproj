@@ -24,6 +24,7 @@
 		A06556BE2808A015007E7EA0 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06556BD2808A015007E7EA0 /* Services.swift */; };
 		A06556C02808A02C007E7EA0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06556BF2808A02C007E7EA0 /* ViewModel.swift */; };
 		A06556C22808A193007E7EA0 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06556C12808A193007E7EA0 /* Storyboards.swift */; };
+		A090DC2F281864C500D9C9F6 /* CurrenciesCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A090DC2E281864C500D9C9F6 /* CurrenciesCVC.swift */; };
 		A0DB7AE42809F86F00BEE13D /* SurvivorCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DB7AE32809F86F00BEE13D /* SurvivorCVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		A06556BD2808A015007E7EA0 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		A06556BF2808A02C007E7EA0 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		A06556C12808A193007E7EA0 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		A090DC2E281864C500D9C9F6 /* CurrenciesCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesCVC.swift; sourceTree = "<group>"; };
 		A0DB7AE32809F86F00BEE13D /* SurvivorCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurvivorCVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +108,7 @@
 				A0598EBC2804B22000F839C5 /* Info.plist */,
 				A02CA1F32815375E00B82275 /* ActionSheetShowPerk.swift */,
 				A02CA1F5281539AB00B82275 /* PerksCVC.swift */,
+				A090DC2E281864C500D9C9F6 /* CurrenciesCVC.swift */,
 			);
 			path = AppForDBD;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0DB7AE42809F86F00BEE13D /* SurvivorCVC.swift in Sources */,
+				A090DC2F281864C500D9C9F6 /* CurrenciesCVC.swift in Sources */,
 				A06556BE2808A015007E7EA0 /* Services.swift in Sources */,
 				A008C0CD280F3F8C001EC7B7 /* DetailPageVC.swift in Sources */,
 				A0598EB32804B21E00F839C5 /* MainMenuVC.swift in Sources */,

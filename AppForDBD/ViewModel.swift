@@ -79,6 +79,32 @@ struct PerksModel {
     
 }
 
+//struct PackNameModel {
+//    var pack_01: String
+//}
+
+//struct PackIconModel {
+//    var pack_01: String
+//}
+
+struct CurrencyModel {
+    var _id: String
+    var name: String
+    var icon: String
+    
+}
+
+//var packIconModel : PackIconModel!
+//var allPackIcons = [PackIconModel]()
+
+//var packNameModel : PackNameModel!
+//var allPackNames = [PackNameModel]()
+
+
+
+var currencyModel : CurrencyModel!
+var allCurrencyDetail = [CurrencyModel]()
+
 var perksModel : PerksModel!
 var allPerksDetail = [PerksModel]()
 

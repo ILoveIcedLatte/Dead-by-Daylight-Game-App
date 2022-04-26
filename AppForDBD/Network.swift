@@ -59,6 +59,29 @@ struct Perks: Codable {
     
 }
 
+//struct PackName: Codable{
+//    var pack_01: String
+//}
+
+//struct PackIcon: Codable {
+//    var pack_01: String
+//}
+
+
+
+struct Currency: Codable {
+    var id: String
+    var nameCurrency: String
+    var iconCurrency: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "_id"
+        case nameCurrency = "name"
+        case iconCurrency = "icon"
+    }
+    
+}
+
 public class Network {
     
     static func sendRequest(_ url: String, completionHandler: @escaping ([Survivor]) -> ()) {
@@ -119,6 +142,30 @@ public class Network {
                 do {
 
                     let response_detail = try JSONDecoder().decode([Perks].self, from: response.data!)
+                    
+                    completionHandler(response_detail)
+                    
+                }
+                catch {print(error)}
+
+            case .failure(let error):
+                print (error)
+            }
+        }
+        
+    }
+    
+    
+    static func sendRequestCurrency(_ url: String, completionHandler: @escaping ([Currency]) -> ()) {
+        
+        AF.request(url, method: .get).responseJSON { (response) in
+
+            switch response.result {
+            case .success(let data):
+
+                do {
+
+                    let response_detail = try JSONDecoder().decode([Currency].self, from: response.data!)
                     
                     completionHandler(response_detail)
                     

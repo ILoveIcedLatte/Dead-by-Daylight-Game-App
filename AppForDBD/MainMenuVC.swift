@@ -19,6 +19,7 @@ class MainMenuVC: UIViewController {
     
     @IBOutlet weak var collectionViewSurvivor: UICollectionView!
     
+    @IBOutlet weak var collectionViewCurrency: UICollectionView!
     @IBOutlet weak var collectionViewKiller: UICollectionView!
     
     override func viewDidLoad() {
@@ -32,6 +33,8 @@ class MainMenuVC: UIViewController {
         getData()
         
         getKillerData()
+        
+        getCurrencyDetail()
         
         effectToWidgets(label: lblKiller)
         effectToWidgets(label: lblSurvivor)
@@ -78,6 +81,24 @@ class MainMenuVC: UIViewController {
         
     }
     
+    func getCurrencyDetail() {
+        
+        Network.sendRequestCurrency(Services.SERVICE_BASE_URL+Services.CURRENCIES, completionHandler: { response_detail in
+            
+            allCurrencyDetail.removeAll()
+            
+            for i in response_detail {
+                
+                allCurrencyDetail.append(CurrencyModel(_id: i.id, name: i.nameCurrency, icon: i.iconCurrency)
+                )
+            }
+            
+            self.collectionViewCurrency.reloadData()
+            print("currencyname:\(allCurrencyDetail[0]._id)")
+            
+        })
+    }
+    
     
     func getKillerData() {
         Network.sendRequestKiller(Services.SERVICE_BASE_URL+Services.KILLERS, completionHandler: { response_detail in
@@ -102,8 +123,6 @@ class MainMenuVC: UIViewController {
             
             self.collectionViewKiller.reloadData()
             
-            print("icon2: \(allKillerModel[0].icon.preview_portrait)")
-            print("name: \(allKillerModel[0].name)")
         })
         
     }
@@ -153,14 +172,20 @@ extension MainMenuVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         
         if collectionView == collectionViewSurvivor {
             return allSurvivorModel.count
-        } else {
+        } else if collectionView == collectionViewKiller{
             return allKillerModel.count
+        } else {
+            return allCurrencyDetail.count
         }
+        
+        
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionViewSurvivor.dequeueReusableCell(withReuseIdentifier: "cellcvc", for: indexPath) as! SurvivorCVC
+        
+        let cellCurrency = collectionViewCurrency.dequeueReusableCell(withReuseIdentifier: "cellCurrency", for: indexPath) as! CurrenciesCVC
         
         
         
@@ -201,7 +226,7 @@ extension MainMenuVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
             
             
             return cell
-        } else {
+        } else if collectionView == collectionViewKiller{
             let url = URL(string: allKillerModel[indexPath.row].icon.preview_portrait)
             //print("url: \(url)")
             DispatchQueue.global().async {
@@ -223,6 +248,34 @@ extension MainMenuVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
             effectToWidgets(label: cell.lblName)
             
             return cell
+        } else {
+            
+            
+            let url = URL(string: allCurrencyDetail[indexPath.row].icon)
+            //print("url: \(url)")
+            DispatchQueue.global().async {
+                if let data = try? Data(contentsOf: url!) {
+                    DispatchQueue.main.async {
+                        cellCurrency.imgViewCurrency.image = UIImage(data: data)
+                        
+                        //cell.imgView.layer.cornerRadius = cell.imgView.bounds.width / 2
+                        //cell.imgView.layer.borderWidth = 3
+                        //cell.imgView.layer.borderColor = UIColor.white.cgColor
+                        cellCurrency.imgViewCurrency.layer.shadowColor = UIColor.white.cgColor
+                        cellCurrency.imgViewCurrency.clipsToBounds = false
+                        cellCurrency.imgViewCurrency.layer.shadowOpacity = 1
+                        cellCurrency.imgViewCurrency.layer.shadowOffset = CGSize.zero
+                        cellCurrency.imgViewCurrency.layer.shadowRadius = 10
+                        cellCurrency.imgViewCurrency.layer.shadowPath = UIBezierPath(roundedRect: cellCurrency.imgViewCurrency.bounds, cornerRadius: 10).cgPath
+
+                    }
+            }
+            }
+            
+            cellCurrency.lblCurrency.text = allCurrencyDetail[indexPath.row].name
+            effectToWidgets(label: cellCurrency.lblCurrency)
+            
+            return cellCurrency
         }
         
 
@@ -240,7 +293,7 @@ extension MainMenuVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
             detailPage.detailName = allSurvivorModel[indexPath.row].name
             self.navigationController?.pushViewController(detailPage, animated: true)
             
-        } else {
+        } else if collectionView == collectionViewKiller{
             
             let detailPage = Storyboards.main.instantiateViewController(withIdentifier: "DetailPageVC") as! DetailPageVC
             
@@ -258,8 +311,10 @@ extension MainMenuVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         if collectionView == collectionViewSurvivor {
             
             return CGSize(width: 120, height: 120)
-        } else {
+        } else if collectionView == collectionViewKiller{
             return CGSize(width: 120, height: 120)
+        } else {
+            return CGSize(width: 250, height: 250)
         }
 
     }
